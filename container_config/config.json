@@ -1,0 +1,24 @@
+{
+    "containers": [
+      {
+        "name": "nginx-web-server",
+        "image": "nginx",
+        "ports": ["80:80"],
+        "volumes": ["D:/project/AutoDeployDockerContainer/data/nginx:/usr/share/nginx/html"],
+        "environment": {
+          "VARIABLE_NAME": "value"
+        }
+      },
+      {
+        "name": "database-server",
+        "image": "postgres",
+        "ports": ["5432:5432"],
+        "volumes": ["D:/project/AutoDeployDockerContainer/data/db:/var/lib/postgresql/data"],
+        "environment": {
+          "POSTGRES_USER": "user",
+          "POSTGRES_PASSWORD": "user123"
+        }
+      }
+    ]
+  }
+  
