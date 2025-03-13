@@ -52,6 +52,27 @@
             }
         },
         {
+            "label": "build C project",
+            "command": "gcc",
+            "args": [
+                "main.c",
+                "docker_api.c",
+                "json_parser.c",
+                "-std=c23",
+                "-o",
+                "container_tool",
+                "-lcurl",
+                "-lcjson"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
             "label": "execute",
             "command": "cmd",
             "group": {
@@ -60,7 +81,7 @@
             },
             "args": [
                 "/C",
-                "${fileDirname}\\${fileBasenameNoExtension}"
+                "container_tool"
             ]
         },
         {
